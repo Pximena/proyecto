@@ -46,8 +46,10 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
                 <CheckBox
+                    android:id="@+id/id_fav_pa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:button="@drawable/checkbox_fav"
                     />
                 <TextView
                     android:id="@+id/id_tv_item_can"

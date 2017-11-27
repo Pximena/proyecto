@@ -31,5 +31,15 @@ public class Constants {
                     TABLA_FIELD_DESCRIPTION+" TEXT, "+
                     TABLA_FIELD_CANTIDAD+" TEXT, "+
                     TABLA_FIELD_URL+" TEXT)";
+
+    public static final String TABLA_NAME_FAVORITE = "favorite";
+    public static final String TABLA_FIELD_ID_FAV = "id_fav";
+    public static final String TABLA_FIELD_ID_US = "id_user";
+    public static final String TABLA_FIELD_ID_PROD= "id_prod";
+    public static final String CREATE_TABLE_FAVORITE =
+            "CREATE TABLE "+ TABLA_NAME_FAVORITE+" ("+
+                    TABLA_FIELD_ID_FAV+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                    TABLA_FIELD_ID_US+" INTEGER, "+
+                    TABLA_FIELD_ID_PROD+" INTEGER) ";
 }
 

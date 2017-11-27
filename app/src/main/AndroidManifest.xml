@@ -22,7 +22,8 @@
         <activity android:name=".Views.RegisterUserActivity" />
         <activity android:name=".Views.LoginUserActivity" />
         <activity android:name=".Views.ProductListActivity" />
-        <activity android:name=".Views.DescriptionActivity"></activity>
+        <activity android:name=".Views.DescriptionActivity" />
+        <activity android:name=".Views.FavoriteActivity"></activity>
     </application>
 
 </manifest>

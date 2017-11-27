@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context="com.i044114_i012114.proyectofinalandroid.Views.ProductListActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/p"
+            android:text="holamjnxhcn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/id_rv_contacts"
@@ -14,5 +25,25 @@
         android:layout_height="match_parent"
         android:layout_margin="20dp">
     </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/id_fb_cs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="12dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:src="@drawable/icons8_cerrar_sesi_n_64"
+        />
+
+    </RelativeLayout>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

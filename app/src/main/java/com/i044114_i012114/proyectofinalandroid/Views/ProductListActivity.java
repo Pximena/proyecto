@@ -1,11 +1,15 @@
 package com.i044114_i012114.proyectofinalandroid.Views;
 
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.i044114_i012114.proyectofinalandroid.Adapters.ProductAdapter;
@@ -17,24 +21,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductListActivity extends AppCompatActivity {
-
     RecyclerView recyclerViewContacts;
     ProductAdapter productosAdapter;
     List<Product> productList = new ArrayList<>();
     SqliteHelper sqliteHelper;
+    FloatingActionButton floatingActionButton;
+   TextView tex;
+    public int id_usuario;
+    // = getIntent().getExtras().getInt("prueba");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
         recyclerViewContacts = (RecyclerView) findViewById(R.id.id_rv_contacts);
+        tex=(TextView) findViewById(R.id.p);
+        //tex.setText( String.valueOf (getIntent().getExtras().getInt("prueba")));
+       // id_usuario=Integer.parseInt(tex.getText().toString());
         sqliteHelper = new SqliteHelper(this, "db_contact", null, 1);
-
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerViewContacts.setLayoutManager(linearLayoutManager);
 
+
         listProduct();
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.id_fb_cs);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginUserActivity.changeState(ProductListActivity.this,false);
+                finish();
+            }
+        });
 
     }
     public void listProduct(){
@@ -64,4 +82,12 @@ public class ProductListActivity extends AppCompatActivity {
         productosAdapter = new ProductAdapter(productList, getApplicationContext());
         recyclerViewContacts.setAdapter(productosAdapter);
     }
+
+    public void estus(){
+        id_usuario=Integer.parseInt(tex.getText().toString());
+    }
+    public int egetus(){
+       return id_usuario;
+    }
+
 }
